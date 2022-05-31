@@ -16,6 +16,12 @@ export function ProfessorHome() {
       navigate("/");
     }
   }, []);
+
+  function logout() {
+    localStorage.removeItem("token");
+    navigate("/");
+  }
+
   return (
     <div className="main-container">
       <nav>
@@ -23,7 +29,9 @@ export function ProfessorHome() {
         <h2>Bem vindo {nomeProfessor}</h2>
         <div className="buttons">
           <button>Cadastrar questão</button>
-          <button>Sair {<RiLogoutBoxFill className="icon" />}</button>
+          <button onClick={logout}>
+            Sair {<RiLogoutBoxFill className="icon" />}
+          </button>
         </div>
       </nav>
 
