@@ -9,20 +9,14 @@ import { Login } from "../pages/auth/login";
 import AlunoHome from "../pages/home/aluno";
 import { ProfessorHome } from "../pages/home/professor";
 
-import "./pages/Home.css";
-
-export default function App() {
+export default function Rotas() {
   const isAuthenticated = localStorage.getItem("token");
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route
-          path="/home"
-          element={
-            isAuthenticated?.includes("1") ? <ProfessorHome /> : <AlunoHome />
-          }
-        />
+        <Route path="/phome" element={<ProfessorHome />} />
+        <Route path="/ahome" element={<AlunoHome />} />
       </Routes>
     </Router>
   );

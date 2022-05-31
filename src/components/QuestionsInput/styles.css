@@ -1,0 +1,30 @@
+.container {
+    width: 35vw;
+    margin: 1rem;
+    background: #fff;
+}
+
+.container .title-container {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+
+.container .title-container .icon {
+    margin-left: 10rem;
+    color: #5d18d2;
+    font-size: 20px;
+}
+
+.container .question {
+    margin-left: 1rem;
+}
+
+.container .question .question-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.container .question .question-container > p {
+    margin-left: 5px;
+}

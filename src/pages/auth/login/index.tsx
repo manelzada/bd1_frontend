@@ -13,33 +13,23 @@ export function Login() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!loading && localStorage.getItem("token") !== null) {
-      navigate("/home");
-    }
-  }, [loading, navigate]);
+  // useEffect(() => {
+  //   if (!loading && localStorage.getItem("token") !== null) {
+  //     navigate("/home");
+  //   }
+  // }, [loading, navigate]);
 
   function onLogin(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      if (inputMatricula.includes("1")) {
-        localStorage.setItem("token", "1");
-      } else {
-        localStorage.setItem("token", "2");
-      }
-      setLoading(false);
-    }, 2000);
+    if (inputMatricula.includes("1")) {
+      localStorage.setItem("token", "1");
+      navigate("/phome");
+    } else {
+      localStorage.setItem("token", "2");
+      navigate("/ahome");
+    }
   }
-
-  // function onLogin(e: FormEvent<HTMLFormElement>) {
-  //   e.preventDefault();
-  //   if (inputMatricula.includes("1")) {
-  //     localStorage.setItem("token", "1");
-  //   } else {
-  //     localStorage.setItem("token", "2");
-  //   }
-  //   navigate("/home");
-  // }
 
   return (
     <main>
