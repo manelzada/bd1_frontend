@@ -1,0 +1,33 @@
+.button-component {
+  height: 2.5rem;
+  min-height: 2.5rem;
+  max-width: 100%;
+  width: 15rem;
+  border-radius: 28px;
+  border: 1px solid #8d75a7;
+  background: #5d18d2;
+  color: #fff;
+  margin-top: 1rem;
+  font-size: 1rem;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+
+  box-shadow: 0px 10px 40px -15px #8d75a7;
+}
+
+.button-component:hover {
+  background: #5d18d2;
+  opacity: 0.7;
+  color: white;
+  font-weight: bold;
+}
+
+.button-component:disabled {
+  filter: opacity(0.6);
+  filter: grayscale(0.5);
+  cursor: not-allowed;
+}

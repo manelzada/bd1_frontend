@@ -1,0 +1,55 @@
+.box-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-component,
+.text-area-component {
+  width: 15rem;
+  max-width: 100%;
+
+  margin-bottom: 0.5rem;
+  padding-left: 0.7rem;
+
+  border-radius: 0.3rem;
+  border: 0.05rem solid #999;
+  background: #fff;
+
+  transition: 150ms;
+}
+
+.input-component {
+  height: 2.5rem;
+  min-height: 2.5rem;
+}
+
+.input-component:focus {
+  border: 0.1rem solid var(--color-primary);
+}
+
+.input-component:disabled {
+  border: 0.1rem solid #9e0404;
+}
+
+.text-area-component {
+  height: 5rem;
+
+  resize: vertical;
+
+  padding-top: 0.7rem;
+}
+
+.text-area-component:focus {
+  border: 0.1rem solid var(--color-primary);
+}
+
+.text-area-component:disabled {
+  border: 0.1rem solid #9e0404;
+}
+
+strong.input-required {
+  font-size: 16px !important;
+  margin-left: 5px;
+  color: #9e0404;
+}
