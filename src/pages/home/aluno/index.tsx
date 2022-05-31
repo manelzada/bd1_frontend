@@ -1,3 +1,3 @@
 export default function AlunoHome() {
-  return <></>;
+  return <>Aluno</>;
 }

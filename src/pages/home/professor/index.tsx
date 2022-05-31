@@ -1,1 +1,3 @@
-export function ProfessorHome() {}
+export function ProfessorHome() {
+  return <>Professor</>;
+}
