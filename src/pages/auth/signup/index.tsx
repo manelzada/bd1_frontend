@@ -4,7 +4,7 @@ import FormButton from "../../../components/FormButton";
 import FormInput from "../../../components/FormInput";
 
 export function SignUp() {
-  const [inputEmail, setInputEmail] = useState("");
+  const [inputmatricula, setInputmatricula] = useState("");
   const [inputPassWord, setInputPassWord] = useState("");
 
   function onSignUp() {}
@@ -22,9 +22,9 @@ export function SignUp() {
             label="Numero de matricula"
             type="text"
             name="num_matricula"
-            value={inputEmail}
+            value={inputmatricula}
             placeholder="201945495"
-            onChange={(e) => setInputEmail(e.target.value)}
+            onChange={(e) => setInputmatricula(e.target.value)}
           />
 
           <FormInput

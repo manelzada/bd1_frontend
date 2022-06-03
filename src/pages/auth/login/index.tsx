@@ -2,32 +2,52 @@ import { FormEvent, useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import FormButton from "../../../components/FormButton";
 import FormInput from "../../../components/FormInput";
+import api from "../../../service/api";
 
 import "./styles.css";
 import svgImg from "../../../assets/animate.svg";
 import { useNavigate } from "react-router-dom";
+import {
+  loginRequest,
+  setUserLocalStorage,
+} from "../../../contexts/AuthContext/utils";
 
 export function Login() {
   const [inputMatricula, setInputMatricula] = useState("");
   const [inputPassWord, setInputPassWord] = useState("");
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   if (!loading && localStorage.getItem("token") !== null) {
-  //     navigate("/home");
-  //   }
-  // }, [loading, navigate]);
 
   function onLogin(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setLoading(true);
-    if (inputMatricula.includes("1")) {
-      localStorage.setItem("token", "1");
-      navigate("/phome");
-    } else {
-      localStorage.setItem("token", "2");
-      navigate("/ahome");
+
+    try {
+      api
+        .post("/login", {
+          matricula: inputMatricula,
+          senha: inputPassWord,
+        })
+        .then(({ data }) => {
+          const payload = {
+            matricula: data.matricula,
+            nome: data.nome,
+            acess: data.acess,
+            id_turma_a: data.id_turma_a,
+            id_turma: data.id_turma,
+          };
+          setUserLocalStorage(payload);
+          data?.acess == 1 ? navigate("/phome") : navigate("/ahome");
+          if (data.acess == 1) {
+            localStorage.setItem("token", "1");
+            navigate("/phome");
+          } else if (data.acess == 2) {
+            localStorage.setItem("token", "2");
+            navigate("/ahome");
+          } else {
+            alert("Usuário ou senha incorreto");
+          }
+        });
+    } catch (error) {
+      console.log(error);
     }
   }
 

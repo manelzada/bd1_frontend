@@ -15,10 +15,12 @@ export function QuestionsInput({ title, items }: QuestionsInputProps) {
     <div className="container">
       <div className="title-container">
         <h4>{title}</h4>
-        <BsArrowDownCircleFill
-          className="icon"
-          onClick={() => setSelected(!selected)}
-        />
+        <div>
+          <BsArrowDownCircleFill
+            className="icon"
+            onClick={() => setSelected(!selected)}
+          />
+        </div>
       </div>
 
       <div className="question">
@@ -27,7 +29,7 @@ export function QuestionsInput({ title, items }: QuestionsInputProps) {
           items.map((item) => (
             <div key={item.id} className="question-container">
               <input type="checkbox" />
-              <p key={item.id}>{item.question}</p>
+              <p key={item.id}>{item.resposta}</p>
             </div>
           ))
         ) : (

@@ -1,0 +1,66 @@
+.main {
+  height: 100vh;
+  margin-left: 160px;
+  padding: 0px 10px;
+  background: #201b2c;
+}
+
+.main h2 {
+  text-align: center;
+  color: #fff;
+}
+
+.main .avaliacao {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 45vw;
+  background: #303b52;
+  min-height: 25vw;
+  color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+button {
+  margin-left: auto;
+  margin-right: auto;
+}
+.main .avaliacao .questoes {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5pxpx;
+}
+
+.side-nav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.side-nav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #5d18d2;
+  display: block;
+}
+
+.side-nav .active {
+  background: #fff;
+  opacity: 0.5;
+  color: black;
+}
+
+.side-nav a:hover {
+  color: #f1f1f1;
+}
