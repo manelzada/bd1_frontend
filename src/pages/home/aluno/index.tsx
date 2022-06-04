@@ -34,10 +34,10 @@ export default function AlunoHome() {
     <div className="main">
       <div className="side-nav">
         <div>
+          <a href="">Home</a>
           <a href="" className="active">
-            Home
+            Avaliação
           </a>
-          <a href="">Avaliação</a>
           <a href="">Material de estudo</a>
           <a href="">Chat</a>
         </div>

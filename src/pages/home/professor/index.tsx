@@ -23,8 +23,6 @@ export function ProfessorHome() {
   const [alternativa3, setAlternativa3] = useState("");
   const [alternativa4, setAlternativa4] = useState("");
   const [alternativa5, setAlternativa5] = useState("");
-  const [alternativaCount, setAlternativaCount] = useState(false);
-  const [alternativas, setAlternativas] = useState([]);
 
   const navigate = useNavigate();
   const user = getUserLocalStorage();
